@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>College Admission Form</title>
+	<script>
+		function validateForm() {
+			var name = document.forms["admissionForm"]["name"].value;
+			var email = document.forms["admissionForm"]["email"].value;
+			var phone = document.forms["admissionForm"]["phone"].value;
+			var dob = document.forms["admissionForm"]["dob"].value;
+			var gender = document.forms["admissionForm"]["gender"].value;
+			var program = document.forms["admissionForm"]["program"].value;
+			var marks = document.forms["admissionForm"]["marks"].value;
+
+			if (name == "") {
+				alert("Name must be filled out");
+				return false;
+			}
+
+			if (email == "") {
+				alert("Email must be filled out");
+				return false;
+			}
+
+			if (phone == "") {
+				alert("Phone must be filled out");
+				return false;
+			}
+
+			if (dob == "") {
+				alert("Date of birth must be filled out");
+				return false;
+			}
+
+			if (gender == "") {
+				alert("Gender must be selected");
+				return false;
+			}
+
+			if (program == "") {
+				alert("Program must be selected");
+				return false;
+			}
+
+			if (marks == "") {
+				alert("Marks must be filled out");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>College Admission Form</h1>
+	<form name="admissionForm" action="submit.jsp" method="post" onsubmit="return validateForm()">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br><br>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br><br>
+
+		<label for="phone">Phone:</label>
+		<input type="text" id="phone" name="phone"><br><br>
+
+		<label for="dob">Date of Birth:</label>
+		<input type="date" id="dob" name="dob"><br><br>
+
+		<label for="gender">Gender:</label>
+		<input type="radio" id="male" name="gender" value="Male">
+		<label for="male">Male</label>
+		<input type="radio" id="female" name="gender" value="Female">
+		<label for="female">Female</label><br><br>
+
+		<label for="program">Program:</label>
+		<select id="program" name="program">
+			<option value="">Select Program</option>
+			<option value="B.Tech">B.Tech</option>
+			<option value="B.Sc">B.Sc</option>
+			<option value="B.Com">B.Com</option>
+		</select><br><br>
+
+		<label for="marks">Marks:</label>
+		<input type="text" id="marks" name="marks" required>
+        <input type="submit" value="Submit">
+        </form>
+        </body>
+	    </html>
+
+
